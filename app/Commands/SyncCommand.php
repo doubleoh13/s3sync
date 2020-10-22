@@ -13,6 +13,8 @@ class SyncCommand extends Command
 
     public function handle()
     {
+        $starttime = now();
+
         Log::debug('Sync Started');
         $local = Storage::disk('backupFiles');
         $s3 = Storage::disk('s3');
@@ -53,5 +55,7 @@ class SyncCommand extends Command
             }
         }
 
+
+        Log::info("Successfully uploaded files in " . now()->diffInMinutes($starttime));
     }
 }
