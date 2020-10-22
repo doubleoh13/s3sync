@@ -1,0 +1,41 @@
+{
+    "name": "doubleoh13/s3sync",
+    "description": "S3 Sync utility",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jake Richhart",
+            "email": "jake@jakerichhart.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "illuminate/log": "^8.0",
+        "laravel-zero/framework": "^8.0",
+        "league/flysystem-aws-s3-v3": "~1.0",
+        "league/flysystem-cached-adapter": "~1.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.4.2",
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "bin": ["s3sync"]
+}
