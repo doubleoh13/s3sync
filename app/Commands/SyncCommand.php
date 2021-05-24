@@ -3,6 +3,7 @@
 namespace App\Commands;
 
 use Carbon\Carbon;
+use GuzzleHttp\Client;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -11,7 +12,7 @@ class SyncCommand extends Command
 {
     protected $signature = 'sync';
 
-    public function handle()
+    public function handle(Client $client)
     {
         $starttime = now();
 
@@ -57,5 +58,9 @@ class SyncCommand extends Command
 
 
         Log::info("Successfully uploaded files in " . now()->diffInMinutes($starttime));
+
+        try {
+            $client->get('https://heartbeat.uptimerobot.com/m788223816-a14d6ddf637dc8b4229eeb410bc011e20c3c989f');
+        } catch (\Throwable $exception) {}
     }
 }
