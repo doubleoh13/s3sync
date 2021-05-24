@@ -4,7 +4,9 @@ return [
     'default' => 'file',
 
     'stores' => [
-        'file' => 'file',
-        'path' => storage_path('framework/cache/data'),
+        'file' => [
+            'driver' => 'file',
+            'path' => storage_path('framework/cache/data'),
+        ],
     ],
 ];
