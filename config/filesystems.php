@@ -14,9 +14,9 @@ return [
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'cache'  => [
-                'store'  => 'array',
+                'store'  => 'file',
                 'prefix' => 's3-cache',
-                'expire' => 600,
+                'expire' => 900,
             ],
         ]
     ],
