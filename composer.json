@@ -16,7 +16,7 @@
         "laravel-zero/framework": "^8.0",
         "league/flysystem-aws-s3-v3": "~1.0",
         "league/flysystem-cached-adapter": "~1.0",
-        "padraic/phar-updater": "^1.0.6"
+        "padraic/phar-updater": "^1.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.4.2",
